@@ -5,7 +5,7 @@ import React from 'react'
 function MainContent() {
   return (
     <Box px={40} >
-        <VStack spacing={6} maxW="430px" mt={'44'} alignItems={'flex-start'} >
+        <VStack spacing={6} maxW="500px" mt={'44'} alignItems={'flex-start'} >
           {/* Main Heading */}
           <Text 
             fontSize={"45px"}
@@ -13,7 +13,7 @@ function MainContent() {
             fontWeight="bolder"
             lineHeight="1.2"
           >
-            Providing care can be simpler
+            Detect implants, Understand implants, All in one place!
           </Text>
           
           {/* Subheading */}
@@ -21,7 +21,7 @@ function MainContent() {
             fontSize={'sm'}
             mt={3}
           >
-            Make achieving your best possible outcomes easier with our AI-powered, all-in-one healthcare solution that enables clinical and operational efficiency.
+            Enable seamless implant identification and evidence-based decisions with integrated AI detection and dynamic RAG knowledge retrieval
           </Text>
           
           {/* Action Buttons */}

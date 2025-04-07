@@ -15,7 +15,6 @@ function MenuBox({isActive, onMouseLeave}) {
 			p={4}
 			zIndex="dropdown"
 			onMouseLeave={onMouseLeave}
-
 			// Animation properties
       opacity={isActive ? 1 : 0}
       transform={isActive ? 'translateY(0)' : 'translateY(-10px)'}

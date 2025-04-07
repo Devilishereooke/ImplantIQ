@@ -25,10 +25,10 @@ function ContentThumbnail() {
 				</video>
 			</Box>
 			<Text fontSize={'xs'} fontWeight={'semibold'} mt={'4'} mb={2} color={'rgb(98, 47, 180)'}>
-				EHR
+				Implant Detector
 			</Text>
 			<Text fontSize="2xl" fontWeight="bolder" mb={2}>
-				Tailorable documentation and more complete records
+				Precision implant detection for complete, structured records
 			</Text>
 			<Button 
 				_hover={{bgColor: 'rgba(0, 0, 0, 0.1)'}}
@@ -41,7 +41,7 @@ function ContentThumbnail() {
 				borderWidth={2}
 				color={'rgb(98, 47, 180)'}
 			>
-				Explore Our EHR
+				Detect your Implant
 			</Button>
 		</Box>
   )
