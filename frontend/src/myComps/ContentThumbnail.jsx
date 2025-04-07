@@ -24,7 +24,7 @@ function ContentThumbnail() {
 					Your browser does not support the video tag.
 				</video>
 			</Box>
-			<Text fontSize={'xs'} fontWeight={'semibold'} mt={'4'} mb={2} color={'rgb(98, 47, 180)'}>
+			<Text fontSize={'xs'} fontWeight={'semibold'} mt={'4'} mb={2} color={'rgb(3, 83, 164)'}>
 				Implant Detector
 			</Text>
 			<Text fontSize="2xl" fontWeight="bolder" mb={2}>
@@ -39,7 +39,7 @@ function ContentThumbnail() {
 				py={'5'}
 				rounded={'full'}
 				borderWidth={2}
-				color={'rgb(98, 47, 180)'}
+				color={'rgb(3, 83, 164)'}
 			>
 				Detect your Implant
 			</Button>

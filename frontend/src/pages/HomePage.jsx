@@ -24,10 +24,10 @@ function HomePage() {
 			<Box px={40} py={'20'} bgColor={'white'}>
 				<SimpleGrid columns={2} gap={'40px'}>
 						<Box>
-						<Text fontSize="x-small" letterSpacing={'0.3em'} fontWeight="bolder" mt={2} color={'rgb(98, 47, 180)'} >
+						<Text fontSize="x-small" letterSpacing={'0.3em'} fontWeight="bolder" mt={2} color={'rgb(3, 83, 164)'} >
 								IMPLANT AND MORE WITH
 						</Text>
-						<Text fontSize="4xl" fontWeight="bold" color="blue.900">
+						<Text fontSize="4xl" fontWeight="bold" color="blue.800">
 								ImplantIQ
 						</Text>
 						</Box>
@@ -36,7 +36,7 @@ function HomePage() {
 						<Text color={'black'} mb={'5'}>
 							Detect implants in seconds, access verified clinical knowledge instantly. Transform diagnostics with ImplantIQ’s RAG platform.
 						</Text>
-						<Button variant={'solid'} colorPalette={'purple'} rounded={'full'} >
+						<Button variant={'solid'} color={'white'} bgColor={'rgb(3, 83, 164)'} rounded={'full'} >
 							Learn More about ImplantIQ
 						</Button>
 						</Box>

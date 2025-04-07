@@ -5,6 +5,7 @@ import { Routes, Route } from 'react-router-dom'
 import DetectorPage from './pages/DetectorPage'
 
 function App() {
+  
   return (
     <Box minH={"100vh"}>
       <Routes>

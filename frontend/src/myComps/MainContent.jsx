@@ -4,7 +4,7 @@ import React from 'react'
 
 function MainContent() {
   return (
-    <Box px={40} >
+    <Box px={40} pb={1} >
         <VStack spacing={6} maxW="500px" mt={'44'} alignItems={'flex-start'} >
           {/* Main Heading */}
           <Text 
