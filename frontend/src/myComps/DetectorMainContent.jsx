@@ -1,7 +1,10 @@
 import React from 'react'
-import { Box, VStack, Text, HStack, Button } from '@chakra-ui/react'
+import { Box, VStack, Text, HStack, Button, Span, Spinner, Image } from '@chakra-ui/react'
+import { useState } from 'react';
+import { FileUpload } from "@chakra-ui/react"
 
-function DetectorMainContent() {
+function DetectorMainContent({handleFileUpload}) {
+
   return (
     <Box px={40} py={'44'} bgColor={'rgb(3, 83, 164)'} >
         <VStack spacing={6} maxW="350px" alignItems={'flex-start'}>
@@ -17,22 +20,28 @@ function DetectorMainContent() {
             fontSize={'3xl'}
             fontWeight={'extrabold'}
           >
-            <Text color={'yellow.400'}>KNOW THE IMPLANT</Text>
+            <Span color={'yellow.400'}>KNOW THE IMPLANT </Span>
             FOCUS ON DELIVERING CARE
           </Text>
-          <HStack spacing={6} mt={'3'}>
-            <Button 
-              variant="solid"
-              size="sm"
-              fontSize={'xs'}
-              fontWeight={'bold'}
-              px={4}
-              rounded={'full'}
-							color={'rgb(3, 83, 164)'}
-            >
-              Upload Implant
-            </Button>
-          </HStack>
+          <FileUpload.Root
+            accept={['image/png', 'image/jpeg']}
+            onFileChange={handleFileUpload}
+          >
+            <FileUpload.HiddenInput />
+            <FileUpload.Trigger asChild>
+              <Button
+                variant="solid"
+                size="sm"
+                fontSize={'xs'}
+                fontWeight={'bold'}
+                px={4}
+                rounded={'full'}
+                color={'rgb(3, 83, 164)'}
+              >
+                Upload Implant
+              </Button>
+            </FileUpload.Trigger>
+          </FileUpload.Root>
         </VStack>
     </Box>
   )
