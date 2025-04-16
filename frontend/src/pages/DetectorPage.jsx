@@ -8,7 +8,7 @@ import { useState } from 'react';
 function DetectorPage() {
 
   const [image, setImage] = useState(null);
-  const [prediction, setPrediction] = useState(null);
+  const [implantData, setImplantData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
   const handleFileUpload = async (files) => {
@@ -17,11 +17,11 @@ function DetectorPage() {
     if (!files || files.length === 0) return;
     
     const file = files.acceptedFiles[0];
-    console.log(file);
+    // console.log(file);
     
     setImage(URL.createObjectURL(file));
     setIsLoading(true);
-    setPrediction(null);
+    setImplantData(null);
 
     try {
       const formData = new FormData();
@@ -38,11 +38,8 @@ function DetectorPage() {
       
       // deconstruct the response into filename, content, type
       const data = await response.json();
-      console.log(data);
-      const { filename, content, type } = data;
-      console.log(type);
-      
-      setPrediction(data);
+      // console.log(data);
+      setImplantData(data);
     } catch (error) {
       console.error('Error:', error);
     }
@@ -55,10 +52,10 @@ function DetectorPage() {
       <DetectorMainContent handleFileUpload={handleFileUpload}  />
       <Predictions 
         image={image} 
-        prediction={prediction}
+        implantData={implantData}
         isLoading={isLoading}
         setIsLoading={setIsLoading}
-        setPrediction={setPrediction}
+        setImplantData={setImplantData}
         setImage={setImage}
         handleFileUpload={handleFileUpload}
         />

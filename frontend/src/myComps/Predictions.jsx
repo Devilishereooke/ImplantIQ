@@ -1,12 +1,13 @@
 import { Box } from '@chakra-ui/react'
 import { VStack, Text, Spinner, Image } from '@chakra-ui/react'
 import React from 'react'
+import TextParser from './TextParser'
 
-function Predictions({ image, prediction, isLoading, setIsLoading, setPrediction, setImage, handleFileUpload }) {
+function Predictions({ image, implantData, isLoading, setIsLoading, setImplantData, setImage, handleFileUpload }) {
   return (
     <Box px={'44'} maxW="1080px" color={'black'}>
 			{/* I want a heading here. Saying Here are your results. Only render this if prediction is not null */}
-			{prediction && (
+			{implantData && (
 			<Text
 				fontSize={'6xl'}
 				fontWeight={'extrabold'}
@@ -20,9 +21,9 @@ function Predictions({ image, prediction, isLoading, setIsLoading, setPrediction
 			)}
 
       {/* Prediction Results */}
-      {prediction && (
-        <Box fontSize={'lg'}>
-							Content: {prediction.content}
+      {implantData && (
+        <Box mt={8}>
+          <TextParser content={implantData} />
         </Box>
       )}
     </Box>

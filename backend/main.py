@@ -24,8 +24,28 @@ def read_root():
 # it should take a file as a input. And then return some random 50 words as content and Also return samsung as a type. 
 @app.post("/")
 async def create_upload_file(file: UploadFile = File(...)):
-    content = "The Nobel Biocare NobelParallel™ Conical Connection Implant is a premium two-piece, bone-level dental implant system crafted from Grade 4 titanium, renowned for its strength and biocompatibility. Available in diameters of 3.5mm, 4.3mm, and 5.0mm with lengths ranging from 8mm to 16mm, it features a proprietary TiUnite® surface for accelerated osseointegration and a 1.5° conical connection with internal hex for prosthetic stability. Its asymmetric V-thread (3.5mm) and dual-lead thread (4.3mm/5.0mm) designs optimize primary stability across all bone densities (D1–D4). Compatible with NobelProcera® abutments, this system supports immediate loading and is ideal for single-tooth to full-arch restorations, with a surgical protocol requiring just 35–45 Ncm insertion torque and 6–8 weeks of healing. Trusted globally, it combines precision engineering with evidence-based outcomes for long-term clinical success."
-    return {"filename": file, "content": content, "type": "NobelParallel"}
+    TEST_IMPLANT_RESPONSE = """To provide a detailed answer about Bone Level Fixture Specifications, I will analyze the given context.
+
+    1.⁠ ⁠*Cover screw*: The cover screw is not included in the package.
+    2.⁠ ⁠*Common Features*:
+            * Internal Morse Taper (10°)
+            * Abutment Interface: 3.3mm
+            * Mountless Type
+    3.⁠ ⁠*Unit*: The unit of measurement is millimeters (mm).
+    4.⁠ ⁠*Specifications*:
+            * A *Platform Diameter*: 3.5, 3.8, 4.3, 4.8, 6.0 mm (corresponding to colors Yellow, Green, Blue, Red, Orange)
+            * B Body Diameter: 3.7, 4.0, 4.5, 5.0, 5.0 mm
+            * C Bevel Height: 0.06, 0.20, 0.32, 0.66 mm
+            * D Total Length: 7.0, 9.0, 11.0, 13.0, 15.0 mm
+            * E Thread Depth: 0.35, 0.40, 0.45, 0.50, 0.50 mm
+            * F Abutment Interface: 3.3 mm
+
+    Additional notes:
+    - *Compatible with*: NobelProcera® abutments
+    - *Material*: Grade 4 Titanium
+    - *Surface treatment*: TiUnite® (porous anodized surface)
+    """;
+    return {TEST_IMPLANT_RESPONSE}
 
 
 if __name__ == "__main__":

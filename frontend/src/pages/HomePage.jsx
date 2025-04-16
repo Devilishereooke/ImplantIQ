@@ -23,27 +23,36 @@ function HomePage() {
 			{/* Bottom Container */}
 			<Box px={40} py={'20'} bgColor={'white'}>
 				<SimpleGrid columns={2} gap={'40px'}>
-						<Box>
-						<Text fontSize="x-small" letterSpacing={'0.3em'} fontWeight="bolder" mt={2} color={'rgb(3, 83, 164)'} >
-								IMPLANT AND MORE WITH
-						</Text>
-						<Text fontSize="4xl" fontWeight="bold" color="blue.800">
-								ImplantIQ
-						</Text>
-						</Box>
+					<Box>
+					<Text fontSize="x-small" letterSpacing={'0.3em'} fontWeight="bolder" mt={2} color={'rgb(3, 83, 164)'} >
+							IMPLANT AND MORE WITH
+					</Text>
+					<Text fontSize="4xl" fontWeight="bold" color="blue.800">
+							ImplantIQ
+					</Text>
+					</Box>
 
-						<Box>
-						<Text color={'black'} mb={'5'}>
-							Detect implants in seconds, access verified clinical knowledge instantly. Transform diagnostics with ImplantIQ’s RAG platform.
-						</Text>
-						<Button variant={'solid'} color={'white'} bgColor={'rgb(3, 83, 164)'} rounded={'full'} >
-							Learn More about ImplantIQ
-						</Button>
-						</Box>
-						
-						<ContentThumbnail />
+					<Box>
+					<Text color={'black'} mb={'5'}>
+						Detect implants in seconds, access verified clinical knowledge instantly. Transform diagnostics with ImplantIQ’s RAG platform.
+					</Text>
+					<Button variant={'solid'} color={'white'} bgColor={'rgb(3, 83, 164)'} rounded={'full'} >
+						Learn More about ImplantIQ
+					</Button>
+					</Box>
+					
+					<ContentThumbnail key={1} 
+						title="Implant Detector" 
+						description="Precision implant detection for complete, structured records"  
+						buttInst="Detect your Implant"
+					/>
 
-						<ContentThumbnail />
+					<ContentThumbnail 
+						key={2}
+						title="AI Assistant"
+						description="AI-powered assistance for your implant related queries"
+						buttInst="Talk to your Assistant"
+					/>
 				</SimpleGrid>
 			</Box>
   	</Box>

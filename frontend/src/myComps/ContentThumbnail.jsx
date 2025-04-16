@@ -3,7 +3,7 @@ import React from 'react'
 import { Button, Text } from '@chakra-ui/react'
 import thumbnail1 from '../assets/thumbnail1.mp4'
 
-function ContentThumbnail() {
+function ContentThumbnail({title, description, buttInst}) {
   return (
     <Box 
 			flex={1} 
@@ -25,10 +25,10 @@ function ContentThumbnail() {
 				</video>
 			</Box>
 			<Text fontSize={'xs'} fontWeight={'semibold'} mt={'4'} mb={2} color={'rgb(3, 83, 164)'}>
-				Implant Detector
+				{title}
 			</Text>
 			<Text fontSize="2xl" fontWeight="bolder" mb={2}>
-				Precision implant detection for complete, structured records
+				{description}
 			</Text>
 			<Button 
 				_hover={{bgColor: 'rgba(0, 0, 0, 0.1)'}}
@@ -41,7 +41,7 @@ function ContentThumbnail() {
 				borderWidth={2}
 				color={'rgb(3, 83, 164)'}
 			>
-				Detect your Implant
+				{buttInst}
 			</Button>
 		</Box>
   )
