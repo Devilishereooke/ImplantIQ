@@ -2,8 +2,16 @@ import { Box } from '@chakra-ui/react'
 import React from 'react'
 import { Button, Text } from '@chakra-ui/react'
 import thumbnail1 from '../assets/thumbnail1.mp4'
+import { Link } from '@chakra-ui/react'
 
 function ContentThumbnail({title, description, buttInst}) {
+
+	const handleClick = () => {
+		console.log('heyy');
+		
+	}
+
+
   return (
     <Box 
 			flex={1} 
@@ -30,19 +38,22 @@ function ContentThumbnail({title, description, buttInst}) {
 			<Text fontSize="2xl" fontWeight="bolder" mb={2}>
 				{description}
 			</Text>
-			<Button 
-				_hover={{bgColor: 'rgba(0, 0, 0, 0.1)'}}
-				variant="outline" 
-				size={'xs'}
-				mt={4}
-				px={6}
-				py={'5'}
-				rounded={'full'}
-				borderWidth={2}
-				color={'rgb(3, 83, 164)'}
-			>
-				{buttInst}
-			</Button>
+			<Link href='/detector'>
+				<Button 
+					_hover={{bgColor: 'rgba(0, 0, 0, 0.1)'}}
+					variant="outline" 
+					size={'xs'}
+					mt={4}
+					px={6}
+					py={'5'}
+					rounded={'full'}
+					borderWidth={2}
+					color={'rgb(3, 83, 164)'}
+					onClick={handleClick}
+				>
+						{buttInst}
+				</Button>
+			</Link>
 		</Box>
   )
 }

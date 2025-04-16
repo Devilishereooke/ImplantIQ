@@ -1,7 +1,8 @@
-import { Flex, HStack, Box, Button, Text } from '@chakra-ui/react'
+import { Flex, HStack, Box, Button, Text, Image } from '@chakra-ui/react'
 import React from 'react'
 import Navlink from './Navlink.jsx'
 import MenuBox from './MenuBox.jsx'
+import logo from '../assets/logo.png'
 
 const Navbar = () => {
 	const [activeMenu, setActiveMenu] = React.useState("none");
@@ -12,9 +13,12 @@ const Navbar = () => {
       <Flex justify="space-between" align="center">
         {/* Left side - Company name and navigation links */}
         <HStack gap={35}>
-          <Text fontSize="xl" fontWeight="bold" _hover={{cursor:'pointer'}}>
-            ImplantIQ
-          </Text>
+          <Box flexDir={'row'}>
+            <Image src={logo} display={'inline'} width={'30px'} height={'30px'} mr={'3'} />
+            <Text fontSize="xl" display={'inline'} fontWeight="bold" _hover={{cursor:'pointer'}}>
+              ImplantIQ
+            </Text>
+          </Box>
           <HStack gap={30}>
             <Navlink 
 							label={'Solutions'} 
