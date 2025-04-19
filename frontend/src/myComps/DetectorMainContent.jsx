@@ -3,10 +3,10 @@ import { Box, VStack, Text, HStack, Button, Span, Spinner, Image } from '@chakra
 import { useState } from 'react';
 import { FileUpload } from "@chakra-ui/react"
 
-function DetectorMainContent({handleFileUpload}) {
+function DetectorMainContent({handleFileUpload, implantClass}) {
 
   return (
-    <Box px={40} py={'44'} bgColor={'rgb(3, 83, 164)'} >
+    <Box px={40} pb={!implantClass ? '32' : '10'} pt={'40'} display={'flex'} flexDir={'column'} gap={'20'} bgColor={'rgb(3, 83, 164)'} >
         <VStack spacing={6} maxW="350px" alignItems={'flex-start'}>
           <Text
             fontSize={'xs'}
@@ -43,6 +43,25 @@ function DetectorMainContent({handleFileUpload}) {
             </FileUpload.Trigger>
           </FileUpload.Root>
         </VStack>
+        {implantClass && 
+        <Box
+          bgColor={'rgb(255, 214, 10)'}
+          rounded={'lg'}
+          display={'flex'}
+          width={'600px'}
+          justifyContent={'center'}
+          py={'2.5'}
+          mx={'auto'}
+        >
+          <Text
+            fontSize={'xx-large'}
+            fontWeight={'bold'}
+            color={'rgb(0, 53, 102)'}
+            >
+            {implantClass}
+          </Text>
+        </Box>
+        }
     </Box>
   )
 }

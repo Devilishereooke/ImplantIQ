@@ -1,4 +1,4 @@
-import { Box } from '@chakra-ui/react'
+import { Box, Button } from '@chakra-ui/react'
 import React from 'react'
 import Navbar from '../myComps/Navbar'
 import DetectorMainContent from '../myComps/DetectorMainContent'
@@ -6,7 +6,7 @@ import Predictions from '../myComps/Predictions'
 import { useState } from 'react';
 
 function DetectorPage() {
-
+  const [implantClass, setImplantClass] = useState(null);
   const [image, setImage] = useState(null);
   const [implantData, setImplantData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -38,8 +38,10 @@ function DetectorPage() {
       
       // deconstruct the response into filename, content, type
       const data = await response.json();
-      // console.log(data);
-      setImplantData(data);
+      console.log(data);
+      
+      setImplantClass(data.class);
+      setImplantData(data.response);
     } catch (error) {
       console.error('Error:', error);
     }
@@ -49,9 +51,11 @@ function DetectorPage() {
   return (
     <Box minH={'100vh'} bg={'white'}>
       <Navbar />
-      <DetectorMainContent handleFileUpload={handleFileUpload}  />
-      <Predictions 
+      <DetectorMainContent handleFileUpload={handleFileUpload} implantClass={implantClass} />
+      {implantClass &&
+        <Predictions 
         image={image} 
+        implantClass={implantClass}
         implantData={implantData}
         isLoading={isLoading}
         setIsLoading={setIsLoading}
@@ -59,6 +63,7 @@ function DetectorPage() {
         setImage={setImage}
         handleFileUpload={handleFileUpload}
         />
+      }
     </Box>
   )
 }

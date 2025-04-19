@@ -1,24 +1,26 @@
 import { Box } from '@chakra-ui/react'
-import { VStack, Text, Spinner, Image } from '@chakra-ui/react'
+import { VStack, Text, Spinner, Image, Button } from '@chakra-ui/react'
 import React from 'react'
 import TextParser from './TextParser'
 
-function Predictions({ image, implantData, isLoading, setIsLoading, setImplantData, setImage, handleFileUpload }) {
+function Predictions({ image, implantClass, implantData, isLoading, setIsLoading, setImplantData, setImage, handleFileUpload }) {
   return (
-    <Box px={'44'} maxW="1080px" color={'black'}>
-			{/* I want a heading here. Saying Here are your results. Only render this if prediction is not null */}
-			{implantData && (
-			<Text
-				fontSize={'6xl'}
-				fontWeight={'extrabold'}
-				textAlign={'center'}
-				mt={2}
-				mb={4}
-				color={'black'}
-			>
-				Here are your results
-			</Text>
-			)}
+    <Box px={'44'} py={'7'} maxW="1080px" color={'black'}>
+      <Box display={'flex'} justifyContent={'center'} >
+        <Button
+          // bgColor={'rgb(255, 201,113)'}
+          variant={'outline'}
+          color={'rgb(0, 48, 73)'}
+          borderColor={'rgb(255, 149, 5)'}
+          _hover={{
+            bgColor: 'rgb(255, 201,113)',
+            color: 'white',
+          }
+        }
+        >
+          Show Detailed Result
+        </Button>
+      </Box>
 
       {/* Prediction Results */}
       {implantData && (
