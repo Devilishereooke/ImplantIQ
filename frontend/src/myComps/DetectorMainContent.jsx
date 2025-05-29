@@ -6,19 +6,17 @@ import {
   HStack,
   Button,
   Span,
-  Spinner,
   Image,
 } from "@chakra-ui/react";
-import { useState } from "react";
 import sideVideo from "../assets/detector.mp4";
 import { FileUpload } from "@chakra-ui/react";
 
-function DetectorMainContent({ handleFileUpload, implantClass }) {
+function DetectorMainContent({ handleFileUpload, image }) {
   return (
     <Box
       px={40}
-      pb={!implantClass ? "32" : "10"}
-      pt={"40"}
+      pb={"32"}
+      pt="20"
       display={"flex"}
       flexDir={"column"}
       gap={"20"}
@@ -58,40 +56,61 @@ function DetectorMainContent({ handleFileUpload, implantClass }) {
             </FileUpload.Trigger>
           </FileUpload.Root>
         </VStack>
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          style={{
-            width: "300px",
-          }}
-        >
-          <source src={sideVideo} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </HStack>
-      {implantClass && (
-        <Box
-          bgColor={"rgb(255, 214, 10)"}
-          rounded={"lg"}
-          display={"flex"}
-          width={"600px"}
-          justifyContent={"center"}
-          py={"2.5"}
-          mx={"auto"}
-        >
-          <Text
-            fontSize={"xx-large"}
-            fontWeight={"bold"}
-            color={"rgb(0, 53, 102)"}
+        {!image ? (
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            style={{
+              width: "300px",
+            }}
           >
-            {implantClass}
-          </Text>
-        </Box>
-      )}
+            <source src={sideVideo} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        ) : (
+          <Box
+            my={8}
+            mx={"auto"}
+            maxW="400px"
+            _hover={{
+              boxShadow: "xl",
+              transform: "translateY(-2px)",
+            }}
+            transition="all 0.2s ease-in-out"
+          >
+            <Image
+              src={image}
+              alt="Uploaded implant"
+              borderRadius="md"
+              boxShadow="lg"
+            />
+          </Box>
+        )}
+      </HStack>
     </Box>
   );
 }
 
 export default DetectorMainContent;
+
+// Class name
+
+// {
+//   implantClass && (
+//     <Box
+//       bgColor={"rgb(255, 214, 10)"}
+//       rounded={"lg"}
+//       display={"flex"}
+//       width={"600px"}
+//       justifyContent={"center"}
+//       py={"2.5"}
+//       mx={"auto"}
+//     >
+//       <Text fontSize={"xx-large"} fontWeight={"bold"} color={"rgb(0, 53, 102)"}>
+//         {implantClass}
+//       </Text>
+//     </Box>
+//   );
+// }
