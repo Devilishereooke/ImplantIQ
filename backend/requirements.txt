@@ -1,0 +1,13 @@
+ultralytics
+segment_anything
+opencv-python
+pycocotools
+matplotlib
+onnxruntime
+onnx
+langchain-community
+pymongo
+python-jose
+os
+dotenv
+passlib
